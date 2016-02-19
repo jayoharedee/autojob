@@ -1,0 +1,15 @@
+{
+    "name": "autojob",
+    
+    "static": {
+        "path": "/srv",
+        "passthrough": true
+    },
+
+    "engine": {
+        "views": {
+            "path": "/usr/views",
+            "engine": "ejs"
+        }
+    }
+}

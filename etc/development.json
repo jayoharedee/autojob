@@ -1,0 +1,17 @@
+{
+
+    "server": {
+      "port": 1818 
+    },
+
+    "engine": {
+        "builder": {
+            "debug": true
+        }
+    },
+
+    "db": {
+        "server": "0.0.0.0"
+    }
+
+}

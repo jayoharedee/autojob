@@ -1,0 +1,41 @@
+{
+
+    "apps": [
+        {
+            "name": "autojob",
+            "script": "bin/www",
+            "instances": 4,
+            "exec_mode"  : "cluster_mode",
+            "error_file": "logs/pm2/err/err.log",
+            "out_file": "logs/pm2/out/out.log",
+            "out_file": "logs/pm2/out/out-env.log",
+            "merge-logs": true,
+            "watch": true,
+            "ignore_watch": ["node_modules", "logs"],
+            "cwd": "./",
+            "autorestart": true,
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        }
+    ],
+
+    "deploy": {
+        "production": {
+            "user": "username",
+            "host": "0.0.0.0",
+            "ref": "origin/master",
+            "repo": "git@github.com:jayoharedee/autojob.git",
+            "path": " /var/www/autojob",
+            "post-deploy": "sudo npm install && sudo pm2 startOrRestart ecosystem.json --env production"
+        },
+        "development": {
+            "user": "dev",
+            "host": "0.0.0.0",
+            "ref": "origin/master",
+            "repo": "git@github.com:jayoharedee/autojob.git",
+            "path": " /Users/dev/dev/autojob",
+            "post-deploy": "sudo npm install && sudo pm2 startOrRestart ecosystem.json --env production"
+        }
+    }
+}
