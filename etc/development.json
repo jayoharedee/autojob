@@ -1,7 +1,7 @@
 {
 
     "server": {
-      "port": 1818 
+      "port": 1818
     },
 
     "engine": {
@@ -11,7 +11,7 @@
     },
 
     "db": {
-        "server": "0.0.0.0"
+        "server": "http://0.0.0.0:27017/autojobs"
     }
 
 }
