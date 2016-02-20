@@ -1,7 +1,11 @@
 {
 
-  "server": {
-    "port": 3636
-  }
+    "server": {
+        "port": 3636
+    },
+    
+    "db": {
+        "server": "mongodb://0.0.0.0/autojobs"
+    }
 
 }
