@@ -15,10 +15,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(expressValidator())
 
-
-// configs
+// configurations
 require('./lib/config')(app)
-
 
 // ROUTES ===============================
 app.get('/', (req, res, next) => {
@@ -35,12 +33,10 @@ app.get('/', (req, res, next) => {
 
 require('./lib/routes')(app)
 
-
-// 404's
+// 404's ================================
 app.use((req, res, next) => next(
     help.createError('Nothing to be found here.', 404)
 ))
-
 
 app.use((err, req, res, next) => {
     res.status(err.code || 500)
